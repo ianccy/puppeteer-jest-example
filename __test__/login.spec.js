@@ -18,7 +18,7 @@ describe("Login", () => {
       const buttonHref = await page.$eval('#e2e-login-button', el => el.href);
       await expect(buttonHref).not.toBe('');
     } catch (error) {
-      await page.screenshot({ path: "./promo_button_href_error.png" });
+      await page.screenshot({ path: "./screenshot_promo_button_href_error.png" });
     }
 
     await page.click("#e2e-login-button");
@@ -42,7 +42,7 @@ describe("Login", () => {
         document.querySelector("button[name='__CONFIRM__']").click();
       });
     } catch (error) {
-      await page.screenshot({ path: "./facebook_error.png" });
+      await page.screenshot({ path: "./screenshot_facebook_error.png" });
     }
     try {
       await page.waitForSelector("div[type='0']", {
@@ -52,7 +52,7 @@ describe("Login", () => {
       const buttonText = await page.$$eval('div[type="0"]', divs => divs[1].textContent);
       await expect(buttonText).toMatch('登出');
     } catch (error) {
-      await page.screenshot({ path: "./promo_login_error.png" });
+      await page.screenshot({ path: "./screenshot_promo_login_error.png" });
     }
 
     done();

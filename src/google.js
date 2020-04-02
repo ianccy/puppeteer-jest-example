@@ -16,7 +16,7 @@ const devices = require("puppeteer/DeviceDescriptors");
 
   await page.waitForNavigation();
   await page.evaluate(() => {
-    document.querySelector('div[role="heading"]').click();
+    document.querySelector('#rso div[role="heading"]').click();
   });
   await page.waitForNavigation();
   await page.screenshot({ path: "./screenshot_google_search.png" });

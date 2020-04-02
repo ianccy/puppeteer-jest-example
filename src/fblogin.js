@@ -35,9 +35,9 @@ const devices = require("puppeteer/DeviceDescriptors");
   await page.waitForSelector("div[type='0']", {
     visible: true
   });
-  await page.waitForFunction(`document.querySelectorAll('div[type="0"]')[1].textContent === '??'`);
+  await page.$$eval('div[type="0"]', divs => divs[1].textContent);
 
-  await page.screenshot({ path: "example.png", fullPage: true });
+  await page.screenshot({ path: "screenshot_loginSuccess.png", fullPage: true });
 
   await browser.close();
 })();
