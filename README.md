@@ -1,1 +1,1 @@
-# puppeteer-jest-example
+# puppeteer-example
